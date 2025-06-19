@@ -46,9 +46,9 @@ Randomize
 Const WeakComputer		= False	' IF your machine is having trouble running this smoothly, try this. 
 Const DMDMode			= 0 	' 0=None, 2=PUP (make sure you set PuPDMDDriverType below)
 Const helpfulcalls		= 1     ' 0=off 1=on for helpful callouts by Crust
-Const houseband			= 1     ' 0=off commercial punk soundtrack 1=on for the PizzaTime House band!
+Const houseband			= 0     ' 0=off commercial punk soundtrack 1=on for the PizzaTime House band!
 Const BallFinderOn		= 1     ' 0=off this allows the tables ball finder script to be on. If you're having issues with it, turn it off.
-Const osbactive			= 1 	' Orbital Scoreboard: Set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.	
+Const osbactive			= 0 	' Orbital Scoreboard: Set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.	
 								'     See link to create obs.vbs: https://docs.orbitalpin.com/vpx-user-settings
 Const FontScale			= .5	' Scales the PupFonts up/down for different sized DMDs  [0.5 Desktop]
 Const PreloadMe 		= 1     ' Go through flasher sequence at table start, to prevent in-game slowdowns 
@@ -79,7 +79,7 @@ dim useDMDVideos    : useDMDVideos=True	   ' true or false to use DMD splash vid
 
 
 Const VolBGMusic = 90  ' Volume for Video Clips  
-Const VolMusic = 90	' Volume for Gameplay music
+Const VolMusic = 70	' Volume for Gameplay music
 Const VolDef = 0.5		' Default volume 
 Const VolSfx = 60		' Volume for table Sound effects 
 
@@ -13265,7 +13265,7 @@ Sub pDMDStartUP
 	PuPlayer.SetBackground pBackglass, 1
 
 	debug.print "STARTING ATTRACT2"
-	pupDMDDisplay "DMDBackground","Welcome","attract.mp4",9,0,10
+'pupDMDDisplay "DMDBackground","Welcome","attract.mp4",9,0,10
 '	pInAttract=true
 	bHSAttract=true
 	PuPlayer.LabelShowPage pBackglass, 4,0,""
