@@ -79,7 +79,7 @@ dim useDMDVideos    : useDMDVideos=True	   ' true or false to use DMD splash vid
 
 
 Const VolBGMusic = 90  ' Volume for Video Clips  
-Const VolMusic = 70	' Volume for Gameplay music
+Const VolMusic = 90	' Volume for Gameplay music
 Const VolDef = 0.5		' Default volume 
 Const VolSfx = 60		' Volume for table Sound effects 
 
@@ -802,6 +802,12 @@ End Sub
 	dim strModeSong
 	Dim MusicDir
 	MusicDir="Music"
+
+	' don't forget to add an entry to playlists.pup like this:
+	' 0,Music-alt,,1,-1,100,0 
+	Dim MusicDirAlt
+	MusicDirAlt="Music-alt"
+
 	Dim LFPress, RFPress
 	Dim bSuperSkillShotEnabled
 
@@ -5538,69 +5544,95 @@ debug.print "Super Skillshot Enabled"
 			playmedia "", "Musicipfree", pMusic, "", -1, "", 1, 1
 		Else
 		dim index
-		index = RndNum(0,11)
-		Select case index
-			case 0:
-				playmedia "TheMekons-WhereWereYou.mp3", MusicDir, pMusic, "", -1, "", 1, 1
+		index = RndNum(0,20)
+        Select case index
+		case 0:
+				playmedia "Adam and the Ants - Antmusic.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Adam and the Ants", ""
+				ShowMsg "Now Playing:", ""
+		case 1:
+				playmedia "Angry Samoans - Lights Out.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Angry Samoans", ""
+				ShowMsg "Now Playing:", ""
+		case 2:
+				playmedia "Angry Samoans - Steak Knife.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Angry Samoans", ""
+				ShowMsg "Now Playing:", ""
+		case 3:
+				playmedia "Blink-182 - All The Small Things.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Blink-182", ""
+				ShowMsg "Now Playing:", ""
+		case 4:
+				playmedia "Green Day - Basket Case.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Green Day", ""
+				ShowMsg "Now Playing:", ""
+		case 5:
+				playmedia "Green Day - Burnout.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Green Day", ""
+				ShowMsg "Now Playing:", ""
+		case 6:
+				playmedia "Green Day - She.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Green Day", ""
+				ShowMsg "Now Playing:", ""
+		case 7:
+				playmedia "Sex Pistols - Anarchy in the U.K..mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Sex Pistols", ""
+				ShowMsg "Now Playing:", ""
+		case 8:
+				playmedia "Social Distortion - Ring Of Fire.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Social Distortion", ""
+				ShowMsg "Now Playing:", ""
+		case 9:
+				playmedia "Social Distortion - So Far Away.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Social Distortion", ""
+				ShowMsg "Now Playing:", ""
+		case 10:
+				playmedia "Social Distortion - Story Of My Life.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "Social Distortion", ""
+				ShowMsg "Now Playing:", ""
+		case 11:
+				playmedia "The Clash - Should I Stay Or Should I Go.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Clash", ""
+				ShowMsg "Now Playing:", ""
+		case 12:
+				playmedia "The Clash - Tommy Gun.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Clash", ""
+				ShowMsg "Now Playing:", ""
+		case 13:
+				playmedia "The Clash - Train In Vain (Stand By Me).mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Clash", ""
+				ShowMsg "Now Playing:", ""
+		case 14:
+				playmedia "The Cure - Object.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Cure", ""
+				ShowMsg "Now Playing:", ""
+		case 15:
+				playmedia "The Police - Truth Hits Everybody.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Police", ""
+				ShowMsg "Now Playing:", ""
+		case 16:
+				playmedia "The Ramones - Beat On The Brat.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Ramones", ""
+				ShowMsg "Now Playing:", ""
+		case 17:
+				playmedia "The Ramones - Blitzkrieg Bop.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Ramones", ""
+				ShowMsg "Now Playing:", ""
+		case 18:
+				playmedia "The Ramones - Bonzo Goes To Bitburg.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Ramones", ""
+				ShowMsg "Now Playing:", ""
+		case 19:
+				playmedia "The Ramones - Gimme Gimme Shock Treatment.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Ramones", ""
+				ShowMsg "Now Playing:", ""
+		case 20:
+				playmedia "The Ramones - Sheena Is A Punk Rocker.mp3", MusicDirAlt, pMusic, "", -1, "", 1, 1
+				ShowMsg "The Ramones", ""
+				ShowMsg "Now Playing:", ""
 
-				ShowMsg "The Mekons", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 1:
-				playmedia "Gang of Four - Damaged Goods.mp3", MusicDir, pMusic, "", -1, "", 1, 1
+		End Select
 
-				ShowMsg "Gang of Four", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 2:
-				playmedia "king tuff - animal.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "King Tuff", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 3:
-				playmedia "New York Dolls - Personality Crisis.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "new york dolls", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 4:
-				playmedia "Ramones - Blitzkrieg Bop.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the ramones", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 5:
-				playmedia "Sex Pistols - Anarchy in the U.K..mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "sex pistols", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 6:
-				playmedia "Stiff Little Fingers - Alternative Ulster.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "stiff little fingers", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 7:
-				playmedia "The Adicts - Too Young.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the adicts", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 8:
-				playmedia "The Buzzcocks - Why Can't I Touch It.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the buzzcocks", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 9:
-				playmedia "The Modern Lovers - Roadrunner.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the modern lovers", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 10:
-				playmedia "The Only Ones - Another Girl Another Planet.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the only ones", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-			case 11:
-				playmedia "The Replacements - Bastards of Young.mp3", MusicDir, pMusic, "", -1, "", 1, 1
-
-				ShowMsg "the replacements", "" 'FormatScore(BonusPoints(CurrentPlayer))
-				ShowMsg "Now Playing:", "" 'FormatScore(BonusPoints(CurrentPlayer))
-		End Select 
 		End if
 
 '		if pizzamulti = False and bWizardModeSupreme=False then 	' Dont stop music when in pizza time or Supreme Wizard
